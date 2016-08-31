@@ -1,0 +1,31 @@
+<ion-view  hide-nav-bar="true" class="hotIn">
+    <ion-header-bar class="header_h">
+        <a ui-sref="tabs.find.hot"><i class="icon ion-chevron-left"></i></a>
+    </ion-header-bar>
+    <ion-content>
+        <div class="top_img">
+            <img src="images/hotIn_img1.jpg">
+        </div>
+        <div class="content">
+            <div class="title">
+                <h2>千锤百炼，只为一碗饭香</h2>
+                <span>距离活动结束还有4天</span>
+            </div>
+            <div class="content_txt">
+                <p>九阳铁釜第三代全球首发，现在参与话题互动【千锤百炼，只为一碗饭香】发现九阳铁釜电视广告或者说说那些难忘的喷香米饭，就有机会获得由九阳提供的精美好礼！</p>
+            </div>
+        </div>
+        <div class="comment clearfix" ng-repeat="content in data">
+            <div class="img_tx">
+                <img ng-src="{{content.imgSrc_tx}}">
+            </div>
+            <div class="content">
+                <h2>{{content.name}}</h2>
+                <span>{{content.time}}</span>
+                <p>{{content.content}}</p>
+                <img ng-src="{{content.imgSrc}}">
+            </div>
+        </div>
+        <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>
